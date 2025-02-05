@@ -6,6 +6,7 @@ public class Mover : MonoBehaviour
 {
        public KeyCode keyPress;
        public KeyCode quitKey;
+       public KeyCode resetKey;
     //Min Max Section
 public float xMin;
 public float xMax;
@@ -31,6 +32,12 @@ public float yMax;
         if (Input.GetKeyDown(quitKey))
         {
             Application.Quit();
+        }
+        if (Input.GetKeyDown(resetKey))
+        {
+           Vector3 position = new Vector3(0, 0, 0);
+            //Issues Transform command
+            transform.SetPositionAndRotation(position, Quaternion.identity);
         }
     }
 }
